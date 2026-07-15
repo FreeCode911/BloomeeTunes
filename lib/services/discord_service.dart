@@ -13,7 +13,7 @@ class DiscordService {
     if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
       try {
         DiscordRPC.initialize();
-        _discordRPC = DiscordRPC(applicationId: '1339113296405725235');
+        _discordRPC = DiscordRPC(applicationId: '1362269719767552020');
         _discordRPC?.start(autoRegister: true);
         log(" Discord RPC initialized successfully", name: "DiscordService");
       } catch (e) {
@@ -38,9 +38,9 @@ class DiscordService {
         _discordRPC!.updatePresence(
           DiscordPresence(
               details: track.title,
-              state: isPlaying ? "Playing・$artistStr" : "Paused・$artistStr",
-              largeImageKey: "bloomeetunes_logo",
-              largeImageText: "BloomeeTunes",
+              state: isPlaying ? "Listening ・ $artistStr" : "Paused ・ $artistStr",
+              largeImageKey: "youtube",
+              largeImageText: isPlaying ? "Listening to music" : "Paused music",
               startTimeStamp: _startTimeStamp),
         );
       } catch (e) {
